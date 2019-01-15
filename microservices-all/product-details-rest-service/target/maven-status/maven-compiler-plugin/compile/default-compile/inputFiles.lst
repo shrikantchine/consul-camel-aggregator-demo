@@ -1,0 +1,10 @@
+/Users/shrikantchine/eclipse/micoservices/microservices-all/product-details-rest-service/src/main/java/com/shrikantchine/ProductDetailsApp.java
+/Users/shrikantchine/eclipse/micoservices/microservices-all/product-details-rest-service/src/main/java/com/shrikantchine/consul/ConsulUnregistration.java
+/Users/shrikantchine/eclipse/micoservices/microservices-all/product-details-rest-service/src/main/java/com/shrikantchine/model/ProductDetail.java
+/Users/shrikantchine/eclipse/micoservices/microservices-all/product-details-rest-service/src/main/java/com/shrikantchine/service/ProductDetailsService.java
+/Users/shrikantchine/eclipse/micoservices/microservices-all/product-details-rest-service/src/main/java/com/shrikantchine/controller/ProductDetailsController.java
+/Users/shrikantchine/eclipse/micoservices/microservices-all/product-details-rest-service/src/main/java/com/shrikantchine/consul/ConsulRoutes.java
+/Users/shrikantchine/eclipse/micoservices/microservices-all/product-details-rest-service/src/main/java/com/shrikantchine/consul/ConsulEventNotifier.java
+/Users/shrikantchine/eclipse/micoservices/microservices-all/product-details-rest-service/src/main/java/com/shrikantchine/consul/ConsulRegisterPayload.java
+/Users/shrikantchine/eclipse/micoservices/microservices-all/product-details-rest-service/src/main/java/com/shrikantchine/model/ProductDetailsRequest.java
+/Users/shrikantchine/eclipse/micoservices/microservices-all/product-details-rest-service/src/main/java/com/shrikantchine/model/ProductDetailsResponse.java

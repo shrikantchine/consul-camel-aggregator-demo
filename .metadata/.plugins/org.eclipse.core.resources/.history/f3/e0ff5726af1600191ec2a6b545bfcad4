@@ -1,0 +1,37 @@
+package com.shrikantchine.service;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.PostConstruct;
+
+import org.springframework.stereotype.Service;
+
+import com.shrikantchine.model.ProductDetail;
+import com.shrikantchine.model.ProductDetailsRequest;
+import com.shrikantchine.model.ProductDetailsResponse;
+
+@Service
+public class ProductDetailsService {
+	Map<String, ProductDetailsResponse> customerToProductDetailsMap;
+	
+	@PostConstruct
+	public void init() {
+		this.customerToProductDetailsMap = new HashMap<>();
+		this.customerToProductDetailsMap.put("111", new ProductDetailsResponse(Arrays.asList(new ProductDetail("101", "OnePlus 6T", "Mobile Phones"), 
+																							 new ProductDetail("102", "Hyundai Elantra", "Cars")));
+		this.customerToProductDetailsMap.put("111", Arrays.asList(new ProductDetailsResponse(),
+																  new ProductDetailsResponse()));
+		this.customerToProductDetailsMap.put("222", Arrays.asList(new ProductDetailsResponse("103", "Apple iPhone", "Mobile Phones"),
+				  												  new ProductDetailsResponse("104", "Honda Civic", "Cars")));
+	}
+	
+	public List<ProductDetailsResponse> getProductDetails(ProductDetailsRequest request) {
+		List<ProductDetailsResponse> productDetails = customerToProductDetailsMap.get(request.getCustomerId());
+		return productDetails == null ? new ArrayList<>() : productDetails;
+	}
+
+}

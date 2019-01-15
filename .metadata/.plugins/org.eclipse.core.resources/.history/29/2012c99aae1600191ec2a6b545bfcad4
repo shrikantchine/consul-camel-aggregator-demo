@@ -1,0 +1,5 @@
+package com.shrikantchine.model;
+
+public class ProductDetails {
+
+}

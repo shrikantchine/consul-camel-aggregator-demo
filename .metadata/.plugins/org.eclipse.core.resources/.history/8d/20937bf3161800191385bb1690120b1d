@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: account-details
+ 
+server:
+  port: 7001

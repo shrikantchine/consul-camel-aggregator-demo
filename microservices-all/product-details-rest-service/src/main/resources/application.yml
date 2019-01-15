@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: product-details
+    
+server:  port: 7004

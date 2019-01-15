@@ -1,0 +1,28 @@
+package com.shrikantchine.ws;
+
+import java.util.List;
+
+import javax.jws.WebMethod;
+import javax.jws.WebParam;
+import javax.jws.WebResult;
+import javax.jws.WebService;
+import javax.jws.soap.SOAPBinding;
+import javax.jws.soap.SOAPBinding.ParameterStyle;
+import javax.jws.soap.SOAPBinding.Style;
+import javax.jws.soap.SOAPBinding.Use;
+
+import com.shrikantchine.model.OrderDetailsRequest;
+import com.shrikantchine.model.OrderDetailsResponse;
+
+@WebService(name="OrderDetailsService", 
+			targetNamespace="http://shrikantchine.com/soap/OrderDetailsService/v1")
+@SOAPBinding(style=Style.DOCUMENT, parameterStyle=ParameterStyle.BARE, use=Use.LITERAL)
+public interface OrderDetailsService {
+
+	@WebMethod
+	@WebResult(targetNamespace = "http://shrikantchine.com/soap/OrderDetailsService/v1")
+	public List<OrderDetailsResponse> getOrderDetails(
+			@WebParam(name = "OrderDetailsRequest", targetNamespace = "http://shrikantchine.com/soap/OrderDetailsService/v1")
+			OrderDetailsRequest request);
+	
+}

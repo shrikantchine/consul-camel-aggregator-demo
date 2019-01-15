@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;microservices-all/docker-compose.yml&apos;" deleteContents="false" description="Delete resource &apos;microservices-all/docker-compose.yml&apos;" element1="/microservices-all/docker-compose.yml" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1547577366933"/>
+</session>

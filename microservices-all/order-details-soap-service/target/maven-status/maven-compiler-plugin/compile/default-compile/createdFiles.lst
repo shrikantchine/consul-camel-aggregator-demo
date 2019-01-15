@@ -1,0 +1,13 @@
+com/shrikantchine/consul/ConsulUnregistration.class
+com/shrikantchine/data/OrderDetailsDAO.class
+com/shrikantchine/ws/OrderDetailsServiceImpl.class
+com/shrikantchine/ws/OrderDetailsServiceImplService.class
+com/shrikantchine/consul/ConsulRoutes.class
+com/shrikantchine/model/OrderDetailsResponse.class
+com/shrikantchine/model/OrderItem.class
+com/shrikantchine/consul/ConsulRegisterPayload.class
+com/shrikantchine/ws/OrderDetailsService.class
+com/shrikantchine/OrderDetailsApp.class
+com/shrikantchine/config/EndpointConfig.class
+com/shrikantchine/model/OrderDetailsRequest.class
+com/shrikantchine/consul/ConsulEventNotifier.class

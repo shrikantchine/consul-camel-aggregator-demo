@@ -1,0 +1,9 @@
+/Users/shrikantchine/eclipse/micoservices/microservices-all/customer-details-rest-service/src/main/java/com/shrikantchine/controller/CustomerDetailsController.java
+/Users/shrikantchine/eclipse/micoservices/microservices-all/customer-details-rest-service/src/main/java/com/shrikantchine/consul/ConsulEventNotifier.java
+/Users/shrikantchine/eclipse/micoservices/microservices-all/customer-details-rest-service/src/main/java/com/shrikantchine/data/CustomerDetailsService.java
+/Users/shrikantchine/eclipse/micoservices/microservices-all/customer-details-rest-service/src/main/java/com/shrikantchine/model/CustomerDetailsRequest.java
+/Users/shrikantchine/eclipse/micoservices/microservices-all/customer-details-rest-service/src/main/java/com/shrikantchine/consul/ConsulUnregistration.java
+/Users/shrikantchine/eclipse/micoservices/microservices-all/customer-details-rest-service/src/main/java/com/shrikantchine/consul/ConsulRoutes.java
+/Users/shrikantchine/eclipse/micoservices/microservices-all/customer-details-rest-service/src/main/java/com/shrikantchine/consul/ConsulRegisterPayload.java
+/Users/shrikantchine/eclipse/micoservices/microservices-all/customer-details-rest-service/src/main/java/com/shrikantchine/CustomerDetailsApp.java
+/Users/shrikantchine/eclipse/micoservices/microservices-all/customer-details-rest-service/src/main/java/com/shrikantchine/model/CustomerDetailsResponse.java

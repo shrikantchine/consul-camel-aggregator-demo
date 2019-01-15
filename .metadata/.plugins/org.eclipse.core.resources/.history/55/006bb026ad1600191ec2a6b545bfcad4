@@ -1,0 +1,34 @@
+package com.shrikantchine.data;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.PostConstruct;
+
+import org.springframework.stereotype.Service;
+
+import com.shrikantchine.model.AccountDetailsRequest;
+import com.shrikantchine.model.AccountDetailsResponse;
+
+@Service
+public class AccountDetailsService {
+	Map<String, List<AccountDetailsResponse>> customerToAccountsMap;
+	
+	@PostConstruct
+	public void init() {
+		this.customerToAccountsMap = new HashMap<>();
+		this.customerToAccountsMap.put("111", Arrays.asList(new AccountDetailsResponse("acc-id-1", "account-one", "cheque"), 
+															new AccountDetailsResponse("acc-id-2", "account-two", "saving")));
+		this.customerToAccountsMap.put("222", Arrays.asList(new AccountDetailsResponse("acc-id-3", "account-three", "cheque"), 
+															new AccountDetailsResponse("acc-id-4", "account-four", "saving")));
+	}
+	
+	public List<AccountDetailsResponse> getAccountDetails(AccountDetailsRequest request) {
+		List<AccountDetailsResponse> accountDetailsList = customerToAccountsMap.get(request.getCustomerId());
+		return accountDetailsList == null ? new ArrayList<>() : accountDetailsList;
+	}
+
+}

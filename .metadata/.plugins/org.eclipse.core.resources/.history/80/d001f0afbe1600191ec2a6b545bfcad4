@@ -1,0 +1,35 @@
+package com.shrikantchine.data;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.shrikantchine.model.OrderDetailsRequest;
+import com.shrikantchine.model.OrderDetailsResponse;
+
+public class OrderDetailsDAO {
+	
+	private static OrderDetailsDAO orderDetailsDAO;
+	
+	public Map<String, OrderDetailsResponse> customerToOrdersMap;
+	
+	private OrderDetailsDAO() {
+		customerToOrdersMap = new HashMap<>();
+		customerToOrdersMap.put("111", Arrays.asList(new OrderDetailsResponse("ord-1", "Apple iMac", "Desktop computer for living room"),
+													 new OrderDetailsResponse("ord-2", "Hyundai Accent", "Car for wife")));
+		customerToOrdersMap.put("222", Arrays.asList(new OrderDetailsResponse("ord-1", "Thinkpad", "Desktop computer for living room"),
+				 									 new OrderDetailsResponse("ord-2", "Hyundai i20", "Car for wife")));
+	}
+	
+	public static synchronized OrderDetailsDAO getInstance() {
+		return orderDetailsDAO == null ? new OrderDetailsDAO() : orderDetailsDAO;
+	}
+	
+	public List<OrderDetailsResponse> getOrderDetails(OrderDetailsRequest request) {
+		List<OrderDetailsResponse> orderDetails = customerToOrdersMap.get(request.getCustomerId());
+		return orderDetails == null ? new ArrayList<>() : orderDetails;
+	}
+
+}

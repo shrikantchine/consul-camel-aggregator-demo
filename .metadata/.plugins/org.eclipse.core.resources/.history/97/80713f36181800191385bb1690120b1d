@@ -1,0 +1,23 @@
+package com.shrikantchine.aggregation;
+
+import java.util.function.Function;
+import java.util.function.Predicate;
+
+import org.apache.camel.Exchange;
+import org.apache.camel.processor.aggregate.AggregationStrategy;
+
+public class GenericAggregationStrategy<T extends Object> implements AggregationStrategy {
+	
+	private T startObject;
+	private Predicate<Exchange> predicate;
+	private Function<Exchange, T> processorFunction;
+	
+	
+
+	@Override
+	public Exchange aggregate(Exchange oldExchange, Exchange newExchange) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

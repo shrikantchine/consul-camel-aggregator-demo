@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: gateway
+
+cxf:  path: /services
+  
+server:  port: 7005

@@ -1,0 +1,27 @@
+version: '3.3'
+
+services: 
+  account_details:
+    build: ./account-details-rest-service
+    ports:
+     - "7001:7001"
+        
+#  customer_details:
+#    build: ./customer-details-rest-service
+#    ports:
+#     - "7002:7002"
+    
+#  order_details:
+#    build: ./order-details-soap-service
+#    ports:
+#     - "7003:8080"
+      
+#  product_details:
+#    build: ./product-details-rest-service
+#    ports:
+#     - "7004:8080"
+      
+#  gateway:
+#    build: ./gateway
+#    ports:
+#     - "7005:8080"

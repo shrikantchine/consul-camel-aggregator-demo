@@ -1,0 +1,11 @@
+version: '3.3'
+
+services: 
+  account_details:
+  build: ./account-details-rest-service
+  ports:
+   - "7001:7001"
+  tty:
+    true
+  restart:
+    unless-stopped

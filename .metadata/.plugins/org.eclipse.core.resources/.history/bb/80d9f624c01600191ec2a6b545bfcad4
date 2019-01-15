@@ -1,0 +1,14 @@
+package com.shrikantchine.ws;
+
+import com.shrikantchine.data.OrderDetailsDAO;
+import com.shrikantchine.model.OrderDetailsRequest;
+import com.shrikantchine.model.OrderDetailsResponse;
+
+public class OrderDetailsServiceImpl implements OrderDetailsService{
+
+	@Override
+	public OrderDetailsResponse getOrderDetails(OrderDetailsRequest request) {
+		return OrderDetailsDAO.getInstance().getOrderDetails(request);
+	}
+
+}

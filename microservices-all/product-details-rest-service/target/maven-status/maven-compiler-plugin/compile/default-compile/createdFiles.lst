@@ -1,0 +1,10 @@
+com/shrikantchine/consul/ConsulUnregistration.class
+com/shrikantchine/consul/ConsulRegisterPayload.class
+com/shrikantchine/service/ProductDetailsService.class
+com/shrikantchine/controller/ProductDetailsController.class
+com/shrikantchine/ProductDetailsApp.class
+com/shrikantchine/model/ProductDetail.class
+com/shrikantchine/consul/ConsulEventNotifier.class
+com/shrikantchine/consul/ConsulRoutes.class
+com/shrikantchine/model/ProductDetailsRequest.class
+com/shrikantchine/model/ProductDetailsResponse.class

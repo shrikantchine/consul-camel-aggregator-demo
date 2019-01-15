@@ -1,0 +1,19 @@
+package com.shrikantchine.ws;
+
+import java.util.List;
+
+import javax.jws.WebService;
+
+import com.shrikantchine.data.OrderDetailsDAO;
+import com.shrikantchine.model.OrderDetailsRequest;
+import com.shrikantchine.model.OrderDetailsResponse;
+
+@WebService(endpointInterface="com.shrikantchine.ws.OrderDetailsService")
+public class OrderDetailsServiceImpl implements OrderDetailsService {
+
+	@Override
+	public List<OrderDetailsResponse> getOrderDetails(OrderDetailsRequest request) {
+		return OrderDetailsDAO.getInstance().getOrderDetails(request);
+	}
+
+}

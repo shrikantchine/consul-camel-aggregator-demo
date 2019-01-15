@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: order-details
+
+  
+cxf:
+  path: /services

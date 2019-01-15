@@ -1,0 +1,22 @@
+package com.shrikantchine.models;
+
+import java.util.List;
+
+public class AccountDetailsResponse {
+	
+	private List<AccountDetails> accountDetails;
+	
+	public AccountDetailsResponse() {}
+
+	public AccountDetailsResponse(List<AccountDetails> accountDetails) {
+		this.accountDetails = accountDetails;
+	}
+
+	public List<AccountDetails> getAccountDetails() {
+		return accountDetails;
+	}
+
+	public void setAccountDetails(List<AccountDetails> accountDetails) {
+		this.accountDetails = accountDetails;
+	}
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+    <typeInfo handle="=gateway/src\/main\/java&lt;com.shrikantchine.routes{GatewayRoutesBuilder.java[GatewayRoutesBuilder" modifiers="1" timestamp="1547380922000"/>
+    <typeInfo handle="=gateway/\/Users\/shrikantchine\/.m2\/repository\/org\/apache\/camel\/camel-core\/2.23.0\/camel-core-2.23.0.jar&lt;org.apache.camel.processor.aggregate(AggregationStrategy.class[AggregationStrategy" modifiers="1537" timestamp="1545927934000"/>
+    <typeInfo handle="=gateway/\/Users\/shrikantchine\/.m2\/repository\/org\/apache\/camel\/camel-core\/2.23.0\/camel-core-2.23.0.jar&lt;org.apache.camel.processor.aggregate(AggregateController.class[AggregateController" modifiers="1537" timestamp="1545927934000"/>
+    <typeInfo handle="=account-details-rest-service/\/Users\/shrikantchine\/.m2\/repository\/org\/apache\/camel\/camel-core\/2.23.0\/camel-core-2.23.0.jar&lt;org.apache.camel.util.toolbox(FlexibleAggregationStrategy.class[FlexibleAggregationStrategy" modifiers="33" timestamp="1545927934000"/>
+</typeInfoHistroy>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.apache.camel.Processor"/>
+    <fullyQualifiedTypeName name="com.shrikantchine.models.CustomerDetailsRequest"/>
+    <fullyQualifiedTypeName name="com.shrikantchine.models.OrderProductAccountRequest"/>
+    <fullyQualifiedTypeName name="org.apache.cxf.message.MessageContentsList"/>
+    <fullyQualifiedTypeName name="com.shrikantchine.models.AccountDetailsRequest"/>
+    <fullyQualifiedTypeName name="com.shrikantchine.model.AccountDetails"/>
+    <fullyQualifiedTypeName name="com.shrikantchine.model.AccountDetailsResponse"/>
+    <fullyQualifiedTypeName name="com.shrikantchine.models.AccountDetailsResponse"/>
+    <fullyQualifiedTypeName name="com.shrikantchine.models.ProductDetailsResponse"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="com.shrikantchine.model.ProductDetail"/>
+    <fullyQualifiedTypeName name="com.shrikantchine.model.ProductDetailsRequest"/>
+    <fullyQualifiedTypeName name="com.shrikantchine.model.ProductDetailsResponse"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="javax.xml.bind.annotation.XmlAccessorType"/>
+    <fullyQualifiedTypeName name="com.shrikantchine.model.OrderItem"/>
+    <fullyQualifiedTypeName name="com.shrikantchine.model.OrderDetailsResponse"/>
+    <fullyQualifiedTypeName name="com.shrikantchine.data.OrderDetailsDAO"/>
+    <fullyQualifiedTypeName name="javax.jws.WebService"/>
+    <fullyQualifiedTypeName name="com.shrikantchine.soap.orderdetailsservice.v1.OrderDetailsResponse"/>
+    <fullyQualifiedTypeName name="org.apache.camel.model.dataformat.SoapJaxbDataFormat"/>
+    <fullyQualifiedTypeName name="org.apache.camel.dataformat.soap.name.ServiceInterfaceStrategy"/>
+    <fullyQualifiedTypeName name="com.shrikantchine.ws.OrderDetailsService"/>
+    <fullyQualifiedTypeName name="com.shrikantchine.soap.orderdetailsservice.v1.OrderDetailsRequest"/>
+    <fullyQualifiedTypeName name="com.shrikantchine.soap.orderdetailsservice.v1.ObjectFactory"/>
+    <fullyQualifiedTypeName name="org.apache.camel.Exchange"/>
+    <fullyQualifiedTypeName name="java.util.function.Predicate"/>
+    <fullyQualifiedTypeName name="org.apache.camel.Predicate"/>
+    <fullyQualifiedTypeName name="java.util.function.Function"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="org.springframework.util.Assert"/>
+</qualifiedTypeNameHistroy>

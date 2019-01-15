@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: order-details
+ 
+server:
+  port: 7004
+  
+cxf:
+  path: /services

@@ -1,0 +1,17 @@
+package com.shrikantchine.aggregation;
+
+import org.apache.camel.Exchange;
+import org.apache.camel.processor.aggregate.AggregationStrategy;
+
+public class GenericAggregationStrategy<T extends Object> implements AggregationStrategy {
+	
+	private T startObject;
+	
+
+	@Override
+	public Exchange aggregate(Exchange oldExchange, Exchange newExchange) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

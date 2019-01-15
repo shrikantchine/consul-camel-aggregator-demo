@@ -1,0 +1,79 @@
+package com.shrikantchine.routes;
+
+import java.util.List;
+
+import org.apache.camel.builder.RouteBuilder;
+import org.apache.camel.component.jackson.JacksonDataFormat;
+import org.apache.camel.model.dataformat.JsonLibrary;
+import org.springframework.context.annotation.DependsOn;
+import org.springframework.stereotype.Component;
+
+import com.shrikantchine.aggregation.OrderProductAccountAggregationStrategy;
+import com.shrikantchine.models.CustomerDetailsResponse;
+import com.shrikantchine.utils.Constants;
+
+@Component
+@DependsOn("consulRegistration")
+public class GatewayRoutesBuilder extends RouteBuilder {
+
+	@Override
+	public void configure() throws Exception {
+		from("cxf:bean:orderProductAccountDetails")
+			.multicast(new OrderProductAccountAggregationStrategy())
+			.parallelProcessing()
+			.to("direct:customerDetails", "direct:productDetails", "direct:accountDetails"/*, "direct:orderDetails"*/)
+			.end();
+		
+		customerDetailsRoute();
+		productDetailsRoute();
+		accountDetailsRoute();
+		//orderDetailsRoute();
+	}
+
+	private void customerDetailsRoute() {
+		from("direct:customerDetails")
+			.routeId(Constants.ROUTE_ID_CUSTOMER_DETAILS)
+			.setProperty("route", simple("routeId"))
+			.routeDescription("Route to retrieve customer details")
+			.marshal()
+				.json(JsonLibrary.Jackson)
+			.serviceCall("customer-details", "http4:customer-details/customers")
+			.unmarshal(new JacksonDataFormat(CustomerDetailsResponse.class));
+	}
+
+	private void accountDetailsRoute() {
+		from("direct:accountDetails")
+			.routeId(Constants.ROUTE_ID_ACCOUNT_DETAILS)
+			.setProperty("route", simple("routeId"))
+			.routeDescription("Route to retrieve customer details")
+			.marshal()
+				.json(JsonLibrary.Jackson)
+			.serviceCall("account-details", "http4:account-details/accounts")
+			.unmarshal(new JacksonDataFormat(List.class));
+	}
+
+
+	private void productDetailsRoute() {
+		from("direct:productDetails")
+			.routeId(Constants.ROUTE_ID_PRODUCT_DETAILS)
+			.setProperty("route", simple("routeId"))
+			.routeDescription("Route to retrieve customer details")
+			.marshal()
+				.json(JsonLibrary.Jackson)
+			.serviceCall("product-details", "http4:product-details/products")
+			.unmarshal(new JacksonDataFormat(List.class));
+	}
+
+	private void orderDetailsRoute() {
+		from("direct:orderDetails")
+			.routeId(Constants.ROUTE_ID_ORDER_DETAILS)
+			.setProperty("route", simple("routeId"))
+			.routeDescription("Route to retrieve customer details")
+			.marshal()
+				.json(JsonLibrary.Jackson)
+			.serviceCall("order-details", "http4:order-details/orders")
+			.unmarshal(new JacksonDataFormat(List.class));
+	}
+
+
+}

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="62e22741-f144-430a-931a-5fa5d63a5805" activeEnvironment="Default" name="Microservices" resourceRoot="" soapui-version="5.4.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="03f5bbe8-db61-4d73-b58e-99b1f26c7544" wsaVersion="NONE" name="OrderProductAccountServiceServiceSoapBinding" type="wsdl" bindingName="{http://shrikantchine.com/soap/OrderProductAccountService/v1}OrderProductAccountServiceServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:7005/services/orderProductAccounts?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:7005/services/orderProductAccounts?wsdl"><con:part><con:url>http://localhost:7005/services/orderProductAccounts?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="OrderProductAccountServiceService" targetNamespace="http://shrikantchine.com/soap/OrderProductAccountService/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://shrikantchine.com/soap/OrderProductAccountService/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://shrikantchine.com/soap/OrderProductAccountService/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://shrikantchine.com/soap/OrderDetailsService/v1">
+      <xs:import namespace="http://shrikantchine.com/soap/OrderDetailsService/v1"/>
+      <xs:complexType name="orderProductAccountRequest">
+        <xs:sequence>
+          <xs:element name="customerId" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="orderProductAccountResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="customerId" type="xs:string"/>
+          <xs:element minOccurs="0" name="fistName" type="xs:string"/>
+          <xs:element minOccurs="0" name="lastName" type="xs:string"/>
+          <xs:element name="age" type="xs:int"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="accountDetails" nillable="true" type="tns:accountDetailsResponse"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="productDetails" nillable="true" type="tns:productDetailsResponse"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="orderDetails" nillable="true" type="ns1:orderDetailsResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="accountDetailsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accountId" type="xs:string"/>
+          <xs:element minOccurs="0" name="accountName" type="xs:string"/>
+          <xs:element minOccurs="0" name="accountType" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="productDetailsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="category" type="xs:string"/>
+          <xs:element minOccurs="0" name="productId" type="xs:string"/>
+          <xs:element minOccurs="0" name="productName" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="OrderProductAccountRequest" nillable="true" type="tns:orderProductAccountRequest"/>
+      <xs:element name="OrderProductAccountResponse" nillable="true" type="tns:orderProductAccountResponse"/>
+    </xs:schema>
+    <xs:schema targetNamespace="http://shrikantchine.com/soap/OrderDetailsService/v1" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://shrikantchine.com/soap/OrderDetailsService/v1">
+      <xs:element name="OrderDetailsRequest" type="tns:orderDetailsRequest"/>
+      <xs:element name="getOrderDetailsResponse" type="tns:orderDetailsResponseArray"/>
+      <xs:complexType name="orderDetailsResponse">
+        <xs:sequence>
+          <xs:element name="orderId" type="xs:string"/>
+          <xs:element name="orderedProduct" type="xs:string"/>
+          <xs:element name="description" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="orderDetailsResponseArray">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="item" nillable="true" type="tns:orderDetailsResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="orderDetailsRequest">
+        <xs:sequence>
+          <xs:element name="customerId" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getOrderProductAccounts">
+    <wsdl:part element="tns:OrderProductAccountRequest" name="OrderProductAccountRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getOrderProductAccountsResponse">
+    <wsdl:part element="tns:OrderProductAccountResponse" name="OrderProductAccountResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="OrderProductAccountService">
+    <wsdl:operation name="getOrderProductAccounts">
+      <wsdl:input message="tns:getOrderProductAccounts" name="getOrderProductAccounts"></wsdl:input>
+      <wsdl:output message="tns:getOrderProductAccountsResponse" name="getOrderProductAccountsResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OrderProductAccountServiceServiceSoapBinding" type="tns:OrderProductAccountService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getOrderProductAccounts">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getOrderProductAccounts">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getOrderProductAccountsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OrderProductAccountServiceService">
+    <wsdl:port binding="tns:OrderProductAccountServiceServiceSoapBinding" name="OrderProductAccountServicePort">
+      <soap:address location="http://localhost:7005/services/orderProductAccounts"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:7005/services/orderProductAccounts</con:endpoint></con:endpoints><con:operation id="bdb683ca-916d-40b4-9699-92ff0c29bd30" isOneWay="false" action="" name="getOrderProductAccounts" bindingOperationName="getOrderProductAccounts" type="Request-Response" outputName="getOrderProductAccountsResponse" inputName="getOrderProductAccounts" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="abcb291a-52dc-4a06-a35e-4b9b3bf74013" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:7005/services/orderProductAccounts</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://shrikantchine.com/soap/OrderProductAccountService/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:OrderProductAccountRequest>
+         <customerId>222</customerId>
+      </v1:OrderProductAccountRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://shrikantchine.com/soap/OrderProductAccountService/v1/OrderProductAccountService/getOrderProductAccounts"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:RestService" id="95f60570-bb90-4b5c-8908-45b4799bbf5c" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://127.0.0.1:7001" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>http://127.0.0.1:7001</con:endpoint></con:endpoints><con:resource name="Accounts" path="/accounts" id="f77d4fd2-d70b-40ad-94ed-a71419da6e46"><con:settings/><con:parameters/><con:method name="Accounts 1" id="4c547649-800d-4701-a65b-4ef25a2a6f9d" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element>Response</con:element></con:representation><con:request name="Request 1" id="2893883f-4221-43b1-9b78-de01469233cc" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://127.0.0.1:7001</con:endpoint><con:request>{
+	"customerId": "111"
+}
+</con:request><con:originalUri>http://127.0.0.1/accounts</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:interface xsi:type="con:RestService" id="f62fbc55-2672-4c7c-86ed-ea2435d5219c" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://127.0.0.1:7003" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://127.0.0.1:7003</con:endpoint></con:endpoints><con:resource name="Products" path="/products" id="c2b9e91f-92ed-43dc-99b5-1abeffac76aa"><con:settings/><con:parameters/><con:method name="Products 1" id="d8f8f55f-85a6-46b6-9385-830af3e99c62" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element>Response</con:element></con:representation><con:request name="Request 1" id="6f39af8d-2474-4dcf-a5c4-ed314d9893f9" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://127.0.0.1:7003</con:endpoint><con:request>{
+	"customerId": "111"
+}
+</con:request><con:originalUri>http://127.0.0.1/products</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:interface xsi:type="con:RestService" id="88e0b855-57fc-426f-a678-359d471c09c5" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://127.0.0.1:7002" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://127.0.0.1:7002</con:endpoint></con:endpoints><con:resource name="Customers" path="/customer" id="ff25de98-673b-48ea-9af8-a700a94305ec"><con:settings/><con:parameters/><con:method name="Customers 1" id="45718a0e-3727-4948-9b39-84ddacec4cf2" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>404</con:status><con:params/><con:element xmlns:cus="http://127.0.0.1/customers">cus:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:cus="http://127.0.0.1/customers">cus:Response</con:element></con:representation><con:request name="Request 1" id="125ad77e-09fc-4804-8dbc-3d21bf392f33" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://127.0.0.1:7002</con:endpoint><con:request>{
+	"customerId": "111"
+}
+</con:request><con:originalUri>http://127.0.0.1/customers</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:interface xsi:type="con:WsdlInterface" id="c68a3008-054b-4cfa-84f2-0ddbe9367c4d" wsaVersion="NONE" name="OrderDetailsServiceImplServiceSoapBinding" type="wsdl" bindingName="{http://ws.shrikantchine.com/}OrderDetailsServiceImplServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:7004/services/orders?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:7004/services/orders?wsdl"><con:part><con:url>http://localhost:7004/services/orders?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="OrderDetailsServiceImplService" targetNamespace="http://ws.shrikantchine.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ws.shrikantchine.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:ns1="http://shrikantchine.com/soap/OrderDetailsService/v1">
+  <wsdl:import location="http://localhost:7004/services/orders?wsdl=OrderDetailsService.wsdl" namespace="http://shrikantchine.com/soap/OrderDetailsService/v1"></wsdl:import>
+  <wsdl:binding name="OrderDetailsServiceImplServiceSoapBinding" type="ns1:OrderDetailsService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getOrderDetails">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getOrderDetails">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getOrderDetailsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OrderDetailsServiceImplService">
+    <wsdl:port binding="tns:OrderDetailsServiceImplServiceSoapBinding" name="OrderDetailsServiceImplPort">
+      <soap:address location="http://localhost:7004/services/orders"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:7004/services/orders?wsdl=OrderDetailsService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="OrderDetailsService" targetNamespace="http://shrikantchine.com/soap/OrderDetailsService/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://shrikantchine.com/soap/OrderDetailsService/v1">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://shrikantchine.com/soap/OrderDetailsService/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://shrikantchine.com/soap/OrderDetailsService/v1">
+      <xs:complexType name="orderDetailsRequest">
+        <xs:sequence>
+          <xs:element name="customerId" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="orderDetailsResponse">
+        <xs:sequence>
+          <xs:element name="orderId" type="xs:string"/>
+          <xs:element name="orderedProduct" type="xs:string"/>
+          <xs:element name="description" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType final="#all" name="orderDetailsResponseArray">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="item" nillable="true" type="tns:orderDetailsResponse"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="OrderDetailsRequest" nillable="true" type="tns:orderDetailsRequest"/>
+      <xs:element name="getOrderDetailsResponse" nillable="true" type="tns:orderDetailsResponseArray"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getOrderDetails">
+    <wsdl:part element="ns1:OrderDetailsRequest" name="OrderDetailsRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getOrderDetailsResponse">
+    <wsdl:part element="ns1:getOrderDetailsResponse" name="getOrderDetailsResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="OrderDetailsService">
+    <wsdl:operation name="getOrderDetails">
+      <wsdl:input message="ns1:getOrderDetails" name="getOrderDetails"></wsdl:input>
+      <wsdl:output message="ns1:getOrderDetailsResponse" name="getOrderDetailsResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:7004/services/orders</con:endpoint></con:endpoints><con:operation id="a59fda96-99e1-4800-a8eb-aaa0fb58da2e" isOneWay="false" action="" name="getOrderDetails" bindingOperationName="getOrderDetails" type="Request-Response" outputName="getOrderDetailsResponse" inputName="getOrderDetails" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d31d1655-2521-46e3-ad9e-0567b66cd2bd" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:7004/services/orders</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://shrikantchine.com/soap/OrderDetailsService/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:OrderDetailsRequest>
+         <customerId>111</customerId>
+      </v1:OrderDetailsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.shrikantchine.com/OrderDetailsService/getOrderDetails"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

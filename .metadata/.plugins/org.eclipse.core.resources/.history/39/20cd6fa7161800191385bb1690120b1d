@@ -1,0 +1,29 @@
+version: '3.3'
+
+services: 
+  account_details:
+    build: ./account-details-rest-service
+    ports:
+     - "7001:7001"
+    tty:
+      true
+    restart:
+      unless-stopped
+    
+  customer_details:
+    build: ./customer-details-rest-service
+    ports:
+     - "7001:7001"
+    tty:
+      true
+    restart:
+      unless-stopped
+    
+  order_details:
+    build: ./order-details-soap-service
+    ports:
+     - "7001:7001"
+    tty:
+      true
+    restart:
+      unless-stopped

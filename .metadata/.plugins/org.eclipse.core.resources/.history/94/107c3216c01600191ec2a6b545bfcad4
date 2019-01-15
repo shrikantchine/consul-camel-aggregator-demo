@@ -1,0 +1,5 @@
+package com.shrikantchine.ws;
+
+public class OrderDetailsServiceImpl {
+
+}
